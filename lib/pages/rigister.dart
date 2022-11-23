@@ -1,3 +1,4 @@
+import 'package:ecommerce_2/pages/login.dart';
 import 'package:ecommerce_2/shared/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -7,15 +8,25 @@ class Rigister extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(33.0),
+        child: Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(33.0),
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 164,
+                  height: 50,
+                ),
+                TextField(
+                  keyboardType: TextInputType.text,
+                  obscureText: false,
+                  decoration: decorationtextfield.copyWith(
+                      hintText: " Enter Your Name "),
+                ),
+                const SizedBox(
+                  height: 64,
                 ),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
@@ -44,26 +55,34 @@ class Rigister extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8))),
                   ),
                   child: Text(
-                    "Sign In",
+                    "Register",
                     style: TextStyle(fontSize: 19),
                   ),
+                ),
+                const SizedBox(
+                  height: 5,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don not have an account ? "),
+                    Text("Do you have an account ? "),
                     TextButton(
-                      onPressed: () {},
-                      child: Text('sign up',
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()));
+                      },
+                      child: Text('sign np',
                           style: TextStyle(color: Colors.black)),
                     )
                   ],
-                )
+                ),
               ],
             ),
           ),
         ),
       ),
-    );
+    ));
   }
 }

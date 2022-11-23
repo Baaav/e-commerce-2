@@ -1,3 +1,4 @@
+import 'package:ecommerce_2/pages/rigister.dart';
 import 'package:ecommerce_2/shared/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -48,12 +49,20 @@ class Login extends StatelessWidget {
                     style: TextStyle(fontSize: 19),
                   ),
                 ),
+                const SizedBox(
+                  height: 5,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don not have an account ? "),
+                    Text("Do not have an account ? "),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Rigister()));
+                      },
                       child: Text('sign up',
                           style: TextStyle(color: Colors.black)),
                     )
