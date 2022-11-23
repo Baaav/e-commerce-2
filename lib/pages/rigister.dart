@@ -68,7 +68,7 @@ class Rigister extends StatelessWidget {
                     Text("Do you have an account ? "),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const Login()));

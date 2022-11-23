@@ -58,7 +58,7 @@ class Login extends StatelessWidget {
                     Text("Do not have an account ? "),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const Rigister()));
