@@ -19,15 +19,15 @@ class Home extends StatelessWidget {
                   // ignore: prefer_const_constructors
                   decoration: BoxDecoration(
                     image: const DecorationImage(
-                        image: AssetImage("assets/img/test.jpg"),
+                        image: AssetImage("assets/download.jpg"),
                         fit: BoxFit.cover),
                   ),
-                  accountName: const Text("ali Hassan",
+                  accountName: const Text("Bavly badry",
                       // ignore: prefer_const_constructors
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
                       )),
-                  accountEmail: const Text("ali@yahoo.com"),
+                  accountEmail: const Text("bavlybadry@yahoo.com"),
                   currentAccountPictureSize: const Size.square(99),
                   currentAccountPicture: const CircleAvatar(
                       radius: 55,
