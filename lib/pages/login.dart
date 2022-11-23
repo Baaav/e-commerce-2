@@ -1,7 +1,9 @@
-import 'package:ecommerce_2/shared/textfield.dart';
+import 'package:ecommerce_2/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
+  const Login({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,19 +15,21 @@ class Login extends StatelessWidget {
               const SizedBox(
                 height: 164,
               ),
-              MyTextField(
-                text_input_type: TextInputType.emailAddress,
-                is_password: false,
-                hint_text: "Enter Your Email",
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                obscureText: false,
+                decoration: decorationtextfield.copyWith(
+                    hintText: " Enter Your Email "),
               ),
               const SizedBox(
                 height: 64,
               ),
-              MyTextField(
-                text_input_type: TextInputType.text,
-                is_password: true,
-                hint_text: "Enter Your Password",
-              ),
+              TextField(
+                keyboardType: TextInputType.text,
+                obscureText: true,
+                decoration: decorationtextfield.copyWith(
+                    hintText: " Enter Your Password "),
+              )
             ],
           ),
         ),
