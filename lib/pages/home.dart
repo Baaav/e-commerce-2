@@ -1,6 +1,14 @@
-// ignore_for_file: prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, empty_constructor_bodies
 
+import 'package:ecommerce_2/pages/lists.dart';
 import 'package:flutter/material.dart';
+
+// ignore: empty_constructor_bodies
+class itms {
+  String imgpath;
+  double cost;
+  itms({required this.imgpath, required this.cost});
+}
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -95,6 +103,34 @@ class Home extends StatelessWidget {
           )
         ],
       ),
+      body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 33),
+          itemCount: itm.length,
+          itemBuilder: (BuildContext context, int index) {
+            return GridTile(
+              child: GestureDetector(
+                  onTap: () {},
+// use ClipRRect & Positioned
+                  child: Image.asset("itm[index].imgpath")),
+              footer: GridTileBar(
+// backgroundColor: Color.fromARGB(66, 73, 127, 110),
+                trailing: IconButton(
+                    color: Color.fromARGB(255, 62, 94, 70),
+                    onPressed: () {},
+                    icon: Icon(Icons.add)),
+
+                leading: Text("\$12.99"),
+
+                title: Text(
+                  "",
+                ),
+              ),
+            );
+          }),
     );
   }
 }
