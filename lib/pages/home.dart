@@ -7,7 +7,11 @@ import 'package:flutter/material.dart';
 class itms {
   String imgpath;
   double cost;
-  itms({required this.imgpath, required this.cost});
+  String location;
+  itms(
+      {required this.imgpath,
+      required this.cost,
+      this.location = "Main branch"});
 }
 
 class Home extends StatelessWidget {
