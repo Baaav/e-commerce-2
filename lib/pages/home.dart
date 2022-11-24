@@ -24,6 +24,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Carttt = Provider.of<Cart>(context);
+
     return Scaffold(
         body: Padding(
           padding: const EdgeInsets.only(top: 22),
@@ -40,7 +42,7 @@ class Home extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Details(product: itm[index]),
+                        builder: (context) => Details(product: items[index]),
                       ),
                     );
                   },
@@ -60,10 +62,12 @@ class Home extends StatelessWidget {
 // backgroundColor: Color.fromARGB(66, 73, 127, 110),
                       trailing: IconButton(
                           color: Color.fromARGB(255, 62, 94, 70),
-                          onPressed: () {},
+                          onPressed: () {
+                            Carttt.add(itm[index]);
+                          },
                           icon: Icon(Icons.add)),
 
-                      leading: Text("\$  ${widget.product.cost}"),
+                      leading: Text("\$12.99"),
 
                       title: Text(
                         "",
@@ -121,41 +125,7 @@ class Home extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
-          actions: [
-            Row(
-              children: [
-                Stack(
-                  children: [
-                    Positioned(
-                      bottom: 24,
-                      child: Container(
-                          child: Text(
-                            "0",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Color.fromARGB(255, 0, 0, 0)),
-                          ),
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(211, 164, 255, 193),
-                              shape: BoxShape.circle)),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.add_shopping_cart),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 12),
-                  child: Text(
-                    "\$ 0",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          actions: [ProductsAndPrice()],
           backgroundColor: appbarGreen,
           title: Text("Home"),
         ));
