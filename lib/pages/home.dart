@@ -115,7 +115,7 @@ class Home extends StatelessWidget {
               child: GestureDetector(
                   onTap: () {},
 // use ClipRRect & Positioned
-                  child: Image.asset("itm[index].imgpath")),
+                  child: Image.asset(itm[index].imgpath)),
               footer: GridTileBar(
 // backgroundColor: Color.fromARGB(66, 73, 127, 110),
                 trailing: IconButton(
