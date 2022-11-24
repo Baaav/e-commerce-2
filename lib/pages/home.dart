@@ -9,10 +9,12 @@ class Itms {
   String imgpath;
   double cost;
   String location;
+  String name;
 
   Itms(
       {required this.imgpath,
       required this.cost,
+      required this.name,
       this.location = "Main branch"});
 }
 
@@ -61,7 +63,7 @@ class Home extends StatelessWidget {
                           onPressed: () {},
                           icon: Icon(Icons.add)),
 
-                      leading: Text("\$12.99"),
+                      leading: Text("\$  ${widget.product.cost}"),
 
                       title: Text(
                         "",
