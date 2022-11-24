@@ -3,7 +3,7 @@ import 'package:ecommerce_2/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatefulWidget {
-  itms product;
+  Itms product;
   Details({required this.product});
 
   @override
